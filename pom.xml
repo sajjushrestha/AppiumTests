@@ -7,15 +7,97 @@
    <name>AppiumTest</name>
   <url>http://maven.apache.org</url>
   
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<selenium.standalone>3.141.59</selenium.standalone>
+		<java.client.appium>7.5.1</java.client.appium>
+		<org.testng>7.4.0</org.testng>
+		<org.junit>4.13.2</org.junit>
+		<source.and.target.JVM.version>1.8</source.and.target.JVM.version>
+		<org.apache.maven.plugins.maven-compiler-plugin.version>3.5</org.apache.maven.plugins.maven-compiler-plugin.version>
+		<org.codehaus.mojo.exec-maven-plugin.version>1.5.0</org.codehaus.mojo.exec-maven-plugin.version>
+		<org.apache.maven.plugins.maven-surefire-plugin.version>2.19</org.apache.maven.plugins.maven-surefire-plugin.version>
+		<org.apache.poi>5.0.0</org.apache.poi>
+	</properties>
+  
   
    <dependencies>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.13.2</version>
       <scope>test</scope>
     </dependency>
+    
+     <dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>${org.testng}</version>
+    <scope>test</scope>
+</dependency>
+    
+    <!-- https://mvnrepository.com/artifact/io.appium/java-client -->
+<dependency>
+    <groupId>io.appium</groupId>
+    <artifactId>java-client</artifactId>
+    <version>${java.client.appium}</version>
+</dependency>
+
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>${selenium.standalone}</version>
+</dependency>
+
+ <dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi</artifactId>
+    <version>${org.apache.poi}</version>
+</dependency>
+ <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi-ooxml</artifactId>
+        <version>${org.apache.poi}</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.google.android/android -->
+<dependency>
+    <groupId>com.google.android</groupId>
+    <artifactId>android</artifactId>
+    <version>4.1.1.4</version>
+    <scope>provided</scope>
+</dependency>
+    
+    
   </dependencies>
+  
+   <build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${org.apache.maven.plugins.maven-compiler-plugin.version}</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<source>${source.and.target.JVM.version}</source>
+					<target>${source.and.target.JVM.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${org.apache.maven.plugins.maven-surefire-plugin.version}</version>
+				<configuration>
+				   
+				<suiteXmlFiles>
+					<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+				
+		</plugins>
+	</build>
   
   
 </project>
