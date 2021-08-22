@@ -71,13 +71,16 @@ Error: Either specify it explicitly with --sdk_root= or move this package into i
 
 Solution : Create a new folder latest inside cmdline-tools folder and move the files inside cmdline-tools to latest folder
 
-Step 1 : Download SDK tools
+Step 1 : Download Android Studio
  https://developer.android.com/studio
 ----------------------------------------------------------------------------------
-Step 2 : Unzip folder & Extract platform tools
+Step 2 : Install the Android Studio
 ----------------------------------------------------------------------------------
-Step 3 : Set environment variables
- ANDROID_HOME = location of sdk folder
+Step 3 : Set System environment variables
+ ANDROID_HOME = location of sdk folder "C:\Users\<name>\AppData\Local\Android\Sdk"
+  and Edit Path and set %ANDROID_HOME%\platform-tools
+  %ANDROID_HOME%\build-tools
+  %ANDROID_HOME%\tools
  Path : append path of platform_tools folder
 ----------------------------------------------------------------------------------
 Step 4 : Check command adb devices on command line
@@ -89,7 +92,19 @@ Step 5 : Make device ready
 ----------------------------------------------------------------------------------
 Step 6 : Connect device to computer system thorugh USB cable
  - if asked enable USB Debbugging
+ 
+ To connect wirelesee:
+ - Go to cmd and type "adb tcpip 5555"
+ - adb connect <IP address of phone>:5555
+ 
+ https://developer.android.com/studio/command-line/adb
 ----------------------------------------------------------------------------------
 Step 7 : Run command adb devices
   adb = android debug bridge
  Check your device id displayed
+ 
+ =============================================================================================================================================
+ 
+ Android useful urls:
+ https://qavalidation.com/appium-tutorial/
+ https://www.software-testing-tutorials-automation.com/2015/10/appium-tutorials.html
