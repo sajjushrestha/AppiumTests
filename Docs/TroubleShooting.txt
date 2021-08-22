@@ -1,0 +1,34 @@
+Error1:
+org.openqa.selenium.SessionNotCreatedException: Unable to create a new remote session. Please check the server log for more details. Original error: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+
+Solution:
+In cmd prompt
+adb uninstall io.appium.uiautomator2.server
+adb uninstall io.appium.uiautomator2.server.test
+
+Found in : https://stackoverflow.com/questions/54646837/could-not-proxy-command-to-remote-server-original-error-error-read-econnreset
+============================================================================================================================================
+Error2:
+Error obtaining UI hierarchy
+
+Reason:
+Error while obtaining UI hierarchy XML file: com.android.ddmlib.SyncException:
+Remote object doesn't exist!'
+
+Solution:
+Go to command prompt, kill the server and start the server..
+adb kill-server
+adb start-server
+
+============================================================================================================================================
+
+Error3:
+java.lang.SecurityException: Permission Denial: starting Intent
+
+Solution:
+Check appPackage and appActivity are correct
+adb shell am start -W -n <appPackage>/<appActivity> -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000
+
+https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md
+
+============================================================================================================================================
